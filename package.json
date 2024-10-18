@@ -10,9 +10,11 @@
     "heroku-postbuild": "echo 'Heroku build completed'"
   },
   "dependencies": {
+    "axios": "^1.7.7",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "jspdf": "^2.5.2",
     "lucide-react": "^0.453.0",
     "pg": "^8.7.1",
     "react": "^18.2.0",
@@ -21,9 +23,24 @@
     "react-scripts": "^5.0.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.7"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@types/react": "^18.3.11",
+    "nodemon": "^3.1.7",
+    "typescript": "^5.6.3"
   },
   "engines": {
     "node": "14.x"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

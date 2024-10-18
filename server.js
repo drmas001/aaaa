@@ -1,6 +1,7 @@
 const express = require('express');
 const { Pool } = require('pg');
 const cors = require('cors');
+const path = require('path'); // إضافة path للتعامل مع المسارات
 require('dotenv').config();
 
 const app = express();
@@ -16,6 +17,7 @@ const pool = new Pool({
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, 'build'))); // خدمة ملفات البناء
 
 // Routes
 app.get('/api/patients', async (req, res) => {
@@ -28,7 +30,12 @@ app.get('/api/patients', async (req, res) => {
   }
 });
 
-// ... (rest of the routes remain the same)
+// المسار الرئيسي للتطبيق
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
+// ... (يمكنك إضافة المزيد من المسارات حسب الحاجة)
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
