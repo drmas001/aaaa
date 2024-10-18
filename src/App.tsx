@@ -10,7 +10,7 @@ import DischargePatient from './components/DischargePatient';
 import DischargeList from './components/DischargeList';
 import DailyReportComponent from './components/DailyReport';
 import ExtractPatientData from './components/ExtractPatientData';
-import NotFound from './components/NotFound'; // إضافة صفحة الخطأ 404
+import NotFound from './src/components/NotFound.tsx'; // إضافة صفحة الخطأ 404
 import { Patient } from './types';
 import { api } from './services/api';
 
