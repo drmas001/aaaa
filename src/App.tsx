@@ -10,7 +10,8 @@ import DischargePatient from './components/DischargePatient';
 import DischargeList from './components/DischargeList';
 import DailyReportComponent from './components/DailyReport';
 import ExtractPatientData from './components/ExtractPatientData';
-import { Patient, MedicalNote, Specialty } from './types';
+import NotFound from './components/NotFound'; // إضافة صفحة الخطأ 404
+import { Patient } from './types';
 import { api } from './services/api';
 
 const App: React.FC = () => {
@@ -101,6 +102,7 @@ const App: React.FC = () => {
               <Route path="/discharge/:id" element={<DischargePatient patients={patients} onDischarge={handleDischargePatient} />} />
               <Route path="/reports" element={<DailyReportComponent />} />
               <Route path="/extract" element={<ExtractPatientData />} />
+              <Route path="*" element={<NotFound />} /> {/* إضافة مسار للتعامل مع الصفحات غير الموجودة */}
             </Routes>
           </main>
         </div>
